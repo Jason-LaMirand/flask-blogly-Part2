@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Post{% endblock %}
+
+{% block content %}
+
+
+<body>
+    <h1>Add Post for {{ user.full_name }}</h1>
+
+    <form method="POST">
+
+        <div class="new post form">
+            <label>Title</label>
+            <input class="form-control" id="title" name="title" placeholder="Title">
+        </div>
+
+        <div class="new post form">
+            <label>Content</label>
+            <input class="form-control" id="content" name="content" placeholder="What on your mind?">
+        </div>
+
+        <div class="form-check">
+            {% for tag in tags %}
+            <div>
+                <input class="form-check-input" type="checkbox" value="{{ tag.id }}" id="tag_{{ tag.id }}" name="tags">
+                <label class="form-check-label" for="tag_{{ tag.id }}">
+                    {{ tag.name }}
+                </label>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="mt-3 form-group row">
+            <div class="ml-auto mr-3">
+                <a href="/tags" class="btn btn-outline-primary">Cancel</a>
+                <button type="submit" class="btn btn-success">Add</button>
+            </div>
+        </div>
+    </form>
+
+    {% endblock %}

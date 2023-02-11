@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Users{% endblock %}
+
+{% block content %}
+
+<body>
+    <form method="POST">
+        <div class="new user form">
+            <label>First Name</label>
+            <input type="text" id="first_name" name="first_name" placeholder="First Name">
+        </div>
+        <div class="new user form">
+            <label>Last Name</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Last Name">
+        </div>
+        <div class="new user form">
+            <label>Image URL</label>
+            <input type="text" id="img_url" name="image_url" placeholder="Img URL">
+        </div>
+        <div class="new user form">
+            <button class="btn" type="submit">Save</button>
+        </div>
+    </form>
+
+    {% endblock %}

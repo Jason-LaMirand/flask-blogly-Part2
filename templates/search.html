@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Blogly{% endblock %}
+
+{% block content %}
+
+<br />
+<h2>You Searched For: <em>{{ searched }}</em></h2>
+
+<br />
+
+
+<br /><br />
+</div>
+<br />
+{% endfor %}
+
+{% else %}
+Sorry, your search term: <strong>{{ searched }}</strong> was not found...
+{% endif %}
+{% endblock %}
